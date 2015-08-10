@@ -16,5 +16,6 @@
 # \subsection{Encrypt swap}
 
 class swap::encrypt {
-    include "${name}::${::osfamily}"
+    $lower_osfamily = downcase($::osfamily)
+    include "${name}::${lower_osfamily}"
 }
