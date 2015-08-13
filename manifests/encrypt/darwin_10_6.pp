@@ -21,7 +21,7 @@ class swap::encrypt::darwin_10_6 {
 # The file may not exist; make sure it has the right ownership and permissions.
     file { $vm:
         ensure => present,
-        owner => root, group => admin, mode => 0644,
+        owner => root, group => admin, mode => '0644',
     }
     mac_plist_value { "encrypt swap":
         require => File[$vm],
